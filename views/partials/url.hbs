@@ -1,0 +1,46 @@
+<div class="row justify-content-around mt-5">
+  <div class="col-sm-5">
+    <form>
+      <div class="form-group">
+        <textarea
+          name="text"
+          cols="30"
+          rows="14"
+          placeholder="Enter the text that you want to encode/decode."
+          class="form-control"
+          style="font-size: 18px !important"
+          >{{ inputText }}</textarea
+        >
+      </div>
+      <button
+        class="btn btn-primary"
+        formaction="/urlencodedecode/urlencode"
+        formmethod="POST"
+      >
+        Encode
+      </button>
+      <button
+        class="btn btn-primary"
+        formaction="/urlencodedecode/urldecode"
+        formmethod="POST"
+      >
+        Decode
+      </button>
+    </form>
+  </div>
+  <div class="col-sm-5">
+    <form>
+      <div class="form-group">
+        <textarea
+          name="text"
+          cols="50"
+          rows="14"
+          placeholder="Your Result will appear here."
+          class="form-control"
+          style="font-size: 18px !important"
+          >{{ result }}</textarea
+        >
+      </div>
+    </form>
+  </div>
+</div>

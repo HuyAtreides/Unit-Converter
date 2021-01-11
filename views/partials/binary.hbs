@@ -1,0 +1,48 @@
+<div class="row justify-content-around mt-5">
+  <div class="col-sm-5">
+    <form>
+      <div class="form-group">
+        <textarea
+          name="text"
+          cols="30"
+          rows="14"
+          placeholder="Enter the text that you want to convert."
+          class="form-control"
+          style="font-size: 18px !important"
+          >{{ inputText }}</textarea
+        >
+      </div>
+      <div class="form-group">
+        <label for="conversion-type" hidden="true"></label>
+        <select class="form-control" id="conversion-type" name="type">
+          <option value="dec-to-bin" selected>Decimal to Binary</option>
+          <option value="bin-to-dec">Binary to Decimal</option>
+          <option value="str-to-bin">String to Binary</option>
+          <option value="bin-to-str">Binary to String</option>
+        </select>
+      </div>
+      <button
+        class="btn btn-primary"
+        formaction="/binaryconverter/convert"
+        formmethod="POST"
+      >
+        Convert
+      </button>
+    </form>
+  </div>
+  <div class="col-sm-5">
+    <form>
+      <div class="form-group">
+        <textarea
+          name="text"
+          cols="50"
+          rows="14"
+          placeholder="Your Result will appear here."
+          class="form-control"
+          style="font-size: 18px !important"
+          >{{ result }}</textarea
+        >
+      </div>
+    </form>
+  </div>
+</div>

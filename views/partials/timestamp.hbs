@@ -1,0 +1,146 @@
+<div class="converter-container">
+  <div class="row justify-content-around align-items-start" id="time-converter">
+    <div class="col-sm-5" id="current-unix-timestamp">
+      <p class="current-unix-title h3" style="color: black">
+        The Current Unix Timestamp
+      </p>
+      <p class="current-unix-time">
+        <span class="h3 text-danger">{{ currentUnixTime }} </span>seconds since
+        Jan 01 1970. (UTC) <br />
+        <br />
+        <span style="color: black; font-weight: 600">
+          This epoch translate to:
+        </span>
+      </p>
+      <p class="current-UTC-time" style="color: black; font-weight: normal">
+        <span style="font-weight: bold">GMT:</span>
+        {{ currentUTCTime }} <br />
+        <span style="font-weight: bold">Your Time Zone:</span>
+        {{ currentTimeZone }}
+      </p>
+    </div>
+    <div class="col-sm-5" id="timestamp-converter">
+      <p class="current-unix-title h3" style="color: black">
+        Timestamp Converter
+      </p>
+      {{#if conversion}}
+
+      <p class="current-UTC-time" style="color: black; font-weight: normal">
+        <span style="font-weight: bold">Epoch Timestamp:</span>
+        {{ unixTime }} <br />
+        <span style="font-weight: bold">GMT:</span>
+        {{ UTCTime }} <br />
+        <span style="font-weight: bold">Your Time Zone:</span>
+        {{ timeZone }}
+      </p>
+      {{/if}}
+      <p class="current-unix-title h3" style="color: black">Make Conversion:</p>
+
+      <form action="/" method="POST">
+        <p class="h6" style="color: grey; font-weight: 600">
+          Enter Date and Time:
+        </p>
+        <div class="form-inline" style="margin-bottom: 5px">
+          <label for="year" hidden="true">year</label>
+          <input
+            id="year"
+            type="text"
+            class="form-control"
+            required
+            name="year"
+            placeholder="Year"
+            maxlength="5"
+            style="width: 4.5rem; margin-left: 7px"
+          />
+
+          <label for="month" hidden="true">month</label>
+          <input
+            id="month"
+            type="text"
+            class="form-control"
+            required
+            name="month"
+            placeholder="Month"
+            maxlength="2"
+            max="12"
+            style="width: 4.5rem; margin-left: 7px"
+          />
+          <label for="day" hidden="true">day</label>
+          <input
+            id="day"
+            type="text"
+            class="form-control"
+            required
+            name="day"
+            placeholder="Day"
+            maxlength="2"
+            style="width: 4.5rem; margin-left: 7px"
+          />
+          <span style="margin-left: 7px"> @ </span>
+          <label for="hours" hidden="true">hours</label>
+          <input
+            id="hours"
+            type="text"
+            class="form-control"
+            name="hour"
+            maxlength="2"
+            placeholder="H"
+            style="width: 3rem; margin-left: 7px"
+            value="0"
+          />
+
+          <label for="minutes" hidden="true">minutes</label>
+          <input
+            type="text"
+            id="minutes"
+            class="form-control"
+            name="minute"
+            maxlength="2"
+            placeholder="M"
+            style="width: 3rem; margin-left: 7px"
+            value="0"
+          />
+
+          <label for="seconds" hidden="true">seconds</label>
+          <input
+            id="seconds"
+            type="text"
+            class="form-control"
+            maxlength="2"
+            name="second"
+            placeholder="S"
+            style="width: 3rem; margin-left: 7px"
+            value="0"
+          />
+        </div>
+        <button
+          class="btn btn-info"
+          type="submit"
+          style="margin-bottom: 10px; margin-top: 5px"
+        >
+          Human Date to Timestamp
+        </button>
+      </form>
+      <form action="/" method="POST">
+        <p class="h6" style="color: grey; font-weight: 600">
+          Enter a Timestamp:
+        </p>
+        <div class="form-group">
+          <label for="timestamp" hidden="true">timestamp</label>
+          <input
+            id="timestamp"
+            type="text"
+            placeholder="1415463675"
+            class="form-control"
+            name="timestamp"
+            style="width: 9rem"
+            required
+          />
+        </div>
+        <button class="btn btn-info" type="submit" style="margin-bottom: 10px">
+          Timestamp to Human Date
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
